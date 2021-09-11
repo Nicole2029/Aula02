@@ -63,7 +63,7 @@ const LinksTarefa = ()=>{
         </View>
     );
 };
-
+/*fffffffffffffffff*/ 
 const styleLinksTarefa = StyleSheet.create({
     container:{
         color:"white",
