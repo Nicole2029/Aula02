@@ -93,6 +93,7 @@ const styleLinksHeader = StyleSheet.create({
 });
 
 const Home = () => {
+    
     return(
         <View style={styles.container}>
             <StatusBar style="auto" />
