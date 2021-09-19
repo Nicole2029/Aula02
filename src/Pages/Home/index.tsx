@@ -1,6 +1,11 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import {Text, View, Image, TextInput , TouchableOpacity} from 'react-native';
+import { styleLinksHeader, styleOneLinkHeader, styles } from './styles';
+import {useNavigation} from '@react-navigation/native';
+import { NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {StackNavigatorParamList} from './types';
+import { styleOneLinkTarefa, styleLinksTarefa } from './styles';
 
 const OneLinkHeader = (props:any)=>{
     return(
@@ -9,11 +14,6 @@ const OneLinkHeader = (props:any)=>{
         </View>
     );
 };
-const styleOneLinkHeader = StyleSheet.create({
-    link:{
-        color:"#4A4A4C",
-    }
-});
 
 const LinksHeader = ()=>{
     return(
@@ -26,9 +26,7 @@ const LinksHeader = ()=>{
         </View>
     );
 };
-
-
-
+type HomePros = NativeStackNavigationProp<StackNavigatorParamList,'Home'>;
 const OneLinkTarefa = (props:any)=>{
     return(
         <View>
@@ -36,11 +34,6 @@ const OneLinkTarefa = (props:any)=>{
         </View>
     );
 };
-const styleOneLinkTarefa = StyleSheet.create({
-    link:{
-        color:"#4A4A4C",
-    }
-});
 
 const LinksTarefa = ()=>{
     return(
@@ -63,37 +56,14 @@ const LinksTarefa = ()=>{
         </View>
     );
 };
-/*fffffffffffffffff*/ 
-const styleLinksTarefa = StyleSheet.create({
-    container:{
-        color:"white",
-        flexDirection:"row",
-        justifyContent:"space-between",
-        paddingHorizontal:45,
-        paddingVertical:20,
-        
-       
-    },
-});
-
-
-
-
-
-const styleLinksHeader = StyleSheet.create({
-    container:{
-        color:"white",
-        flexDirection:"row",
-        justifyContent:"space-between",
-        paddingHorizontal:35,
-        paddingVertical:10,
-        borderBottomColor:"#F0F0F0",
-        borderBottomWidth:3,
-    },
-});
+/*fffffffffffffffff*/
 
 const Home = () => {
-    
+    const navigation = useNavigation<HomePros>();
+    function irParaTelaLogin(){
+        // console.log("oi");
+        navigation.navigate('Login');
+    }  
     return(
         <View style={styles.container}>
             <StatusBar style="auto" />
@@ -121,43 +91,18 @@ const Home = () => {
                     }>
                 </Image>
             </View>
+           
             <LinksHeader></LinksHeader>
             <LinksTarefa></LinksTarefa>
+            <View style={styles.viewButton}>
+                <TouchableOpacity style={styles.button} onPress={irParaTelaLogin}>
+                    <Text style={styles.viewButtonText}> Ir para outra tela</Text>
+                </TouchableOpacity>
 
+        </View>
         </View>
     );
 
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#FFF',
-    },
-    header:{
-        minHeight:70,
-        backgroundColor:"#4369B0",
-        paddingVertical:30,
-        flexDirection:"row",
-        justifyContent:"space-between",
-        alignItems:"center",
-        paddingHorizontal:30,
-        paddingTop:50,
-    },
-    inputTextView:{
-        flex:1,
-        borderRadius:28,
-        backgroundColor:"#2C4877",
-        marginHorizontal: 10,
-        height:40,
-        alignItems:"center",
-        flexDirection:"row",
-    },
-    textInput:{
-        flex:1,
-        paddingRight:10,
-        color:"#F5FFFF",
-    },
-});
 
 export default Home;
