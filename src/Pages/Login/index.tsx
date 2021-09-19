@@ -1,9 +1,17 @@
 import React from 'react';
 import { View, TextInput, Text, Image } from 'react-native';
 import { styles } from './styles';
+import {useNavigation} from '@react-navigation/native';
+import { NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {StackNavigatorParamList} from './types';
 
-
+type LoginPros = NativeStackNavigationProp<StackNavigatorParamList,'Login'>;
 const Login = () => {
+    const navigation = useNavigation<LoginPros>();
+    function irParaTelaLogin(){
+   
+        navigation.navigate('Home');
+    }  
     return(
         <View style={styles.container}>
             <View style={styles.inputTextView}>
@@ -30,7 +38,7 @@ const Login = () => {
               placeholder=" Password"
              />
              <View style={styles.button}>
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText} onPress={irParaTelaLogin}>
                     Log In
                 </Text>
                 
