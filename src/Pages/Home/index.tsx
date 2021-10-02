@@ -1,11 +1,12 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import {Text, View, Image, TextInput , TouchableOpacity} from 'react-native';
+import {Text, View, Image, TextInput , TouchableOpacity, ScrollView} from 'react-native';
 import { styleLinksHeader, styleOneLinkHeader, styles } from './styles';
 import {useNavigation} from '@react-navigation/native';
 import { NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {StackNavigatorParamList} from './types';
 import { styleOneLinkTarefa, styleLinksTarefa } from './styles';
+import {Post} from '../Post';
 
 const OneLinkHeader = (props:any)=>{
     return(
@@ -35,28 +36,6 @@ const OneLinkTarefa = (props:any)=>{
     );
 };
 
-const LinksTarefa = ()=>{
-    return(
-        <View style={styleLinksTarefa.container}>
-            <Image source={
-                    require("../../assets/link-like.png")
-                    }>
-                </Image>
-            <OneLinkTarefa nome="Link"/>
-            <Image source={
-                    require("../../assets/link-coment.png")
-                    }>
-                </Image>
-            <OneLinkTarefa nome="Comment"/>
-            <Image source={
-                    require("../../assets/link-share.png")
-                    }>
-                </Image>
-            <OneLinkTarefa nome="Share"/>
-        </View>
-    );
-};
-/*fffffffffffffffff*/
 
 const Home = () => {
     const navigation = useNavigation<HomePros>();
@@ -93,12 +72,19 @@ const Home = () => {
             </View>
            
             <LinksHeader></LinksHeader>
-            <LinksTarefa></LinksTarefa>
+
+             <ScrollView>
+                <Post/>
+            </ScrollView>
             <View style={styles.viewButton}>
+
+                          
+            
                 <TouchableOpacity style={styles.button} onPress={irParaTelaLogin}>
                     <Text style={styles.viewButtonText}> Ir para outra tela</Text>
                 </TouchableOpacity>
-
+         
+           
         </View>
         </View>
     );
