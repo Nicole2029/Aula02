@@ -1,86 +1,64 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
-export const styleOneLinkHeader = StyleSheet.create({
-    link:{
-        color:"#4A4A4C",
-    }
+export const styleLinksHeader = StyleSheet.create({
+    containerr:{
+        fontSize:25,
+        backgroundColor:"#008069",
+        flexDirection:"row",
+        justifyContent:"space-between",
+        paddingHorizontal:35,
+        paddingVertical:10,
+    },
 });
-
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFF',
     },
     header:{
-        minHeight:70,
-        backgroundColor:"#4369B0",
-        paddingVertical:30,
+        backgroundColor:"#008069",
+        paddingVertical:5,
         flexDirection:"row",
-        justifyContent:"space-between",
         alignItems:"center",
         paddingHorizontal:30,
-        paddingTop:50,
     },
-    inputTextView:{
-        flex:1,
-        borderRadius:28,
-        backgroundColor:"#2C4877",
-        marginHorizontal: 10,
-        height:40,
-        alignItems:"center",
-        flexDirection:"row",
-    },
-    textInput:{
-        flex:1,
-        paddingRight:10,
-        color:"#F5FFFF",
+    inputLupa:{
+        marginTop:60,
+        marginLeft:175,
     },
     button:{
-        backgroundColor:"#4369B0",
-        //marginHorizontal:40,
+        backgroundColor:"#008069",
         height:40,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:5,
-        color:'white',
+        marginBottom:25,
     },
     viewButton:{
         flex:1,
-        
         justifyContent:'flex-end',
         paddingHorizontal:40,
-        paddingVertical:40,
     },
     viewButtonText:{
         color:"#F5FFFF",
         fontSize:15,
     },
-});
- 
-export const styleLinksTarefa = StyleSheet.create({
-    container:{
+    texto:{
         color:"white",
-        flexDirection:"row",
-        justifyContent:"space-between",
-        paddingHorizontal:45,
-        paddingVertical:20,
-        
-       
+        fontSize:25,
+        marginTop:50,
+    },
+    inputPontos:{
+        paddingTop:63,
     },
 });
-export const styleLinksHeader = StyleSheet.create({
-    container:{
-        color:"white",
-        flexDirection:"row",
-        justifyContent:"space-between",
-        paddingHorizontal:35,
-        paddingVertical:10,
-        borderBottomColor:"#F0F0F0",
-        borderBottomWidth:3,
-    },
-});
-export const styleOneLinkTarefa = StyleSheet.create({
+
+export const styleOneLinkHeader = StyleSheet.create({
     link:{
-        color:"#4A4A4C",
+        color:"white",
+        fontSize: 16,
+        fontWeight: "bold",
+
     }
 });
+
